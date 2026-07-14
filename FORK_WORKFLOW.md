@@ -142,16 +142,35 @@ git push origin main
 
 ---
 
-### Step 2：将 my-changes 合并上游更新（Merge，不 Rebase）
+### Step 2：my-changes 什么都不做
 
 ```bash
+# my-changes 上只管写自己的代码和提交
+# 不需要 merge main，不需要 rebase main
+# 它永远是一条独立的、干净的自定义改动线
 git checkout my-changes
-
-# 将最新的 main 合并进来（保留完整历史，不改写提交）
-git merge main --no-ff -m "chore: merge upstream updates into my-changes"
-
-# 推送到 GitHub
+# ... 继续你的开发工作 ...
 git push origin my-changes
+```
+
+
+
+### Step 3：重建 release 分支
+
+> `release` 是每次重建的组装产物 = 最新上游（main）+ 你的改动（my-changes）
+
+```bash
+# 切换到 main（release 从 main 重建）
+git checkout main
+
+# 删除旧的本地 release 分支
+git branch -D release
+
+# 从 main 重新创建 release
+git checkout -b release
+
+# 将 my-changes 的所有内容合并进来
+git merge my-changes --no-ff -m "release: rebuild $(date '+%Y-%m-%d')"
 ```
 
 **如果出现冲突：**
@@ -180,26 +199,6 @@ git push origin my-changes
 > ```bash
 > git merge --abort
 > ```
-
----
-
-### Step 3：重建 release 分支
-
-> `release` 是每次重建的组装产物 = 最新上游（main）+ 你的改动（my-changes）
-
-```bash
-# 切换到 main（release 从 main 重建）
-git checkout main
-
-# 删除旧的本地 release 分支
-git branch -D release
-
-# 从 main 重新创建 release
-git checkout -b release
-
-# 将 my-changes 的所有内容合并进来
-git merge my-changes --no-ff -m "release: rebuild $(date '+%Y-%m-%d')"
-```
 
 ---
 
