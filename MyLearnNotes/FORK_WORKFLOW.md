@@ -153,8 +153,6 @@ git checkout my-changes
 git push origin my-changes
 ```
 
-
-
 ### Step 3：重建 release 分支
 
 > `release` 是每次重建的组装产物 = 最新上游（main）+ 你的改动（my-changes）

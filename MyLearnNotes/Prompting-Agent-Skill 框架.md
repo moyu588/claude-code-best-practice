@@ -172,5 +172,3 @@
 # 参考
 
 [claude-code-best-practice/tutorial/day1/README.md at my-changes · moyu588/claude-code-best-practice · GitHub](https://github.com/moyu588/claude-code-best-practice/blob/my-changes/tutorial/day1/README.md)
-
-
