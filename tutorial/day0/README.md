@@ -6,11 +6,11 @@ This guide walks you through installing Claude Code on your machine and authenti
 
 Choose your operating system:
 
-| OS | Guide |
-|----|-------|
+| OS      | Guide                    |
+| ------- | ------------------------ |
 | Windows | [windows.md](windows.md) |
-| Linux | [linux.md](linux.md) |
-| macOS | [mac.md](mac.md) |
+| Linux   | [linux.md](linux.md)     |
+| macOS   | [mac.md](mac.md)         |
 
 Follow the guide for your OS, then come back here for authentication.
 
