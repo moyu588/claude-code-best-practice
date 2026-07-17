@@ -71,6 +71,7 @@ The skill will fetch the current temperature from Open-Meteo for Dubai and retur
 ### Step 2: Final Report
 
 After the skill returns, provide a concise report to the caller:
+
 - Temperature value (numeric)
 - Temperature unit (Celsius or Fahrenheit)
 - Comparison with previous reading (if available in memory)
